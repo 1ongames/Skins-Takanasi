@@ -1,5 +1,5 @@
 # takanasi 스킨 라이선스
-Copyright for [iongames](https://betawiki.pythonanywhere.com) all rights reserved. But, until the previous version, NOAH01112 the copyright.
+Copyright for [iongames](https://betawiki.pythonanywhere.com) all rights reserved. But, until the previous version, [NOAH01112](https://plground.xyz) the copyright.
 
 이 스킨은 [CC BY-NC-SA 2.0 KR](https://creativecommons.org/licenses/by-nc-sa/2.0/kr/legalcode.ko) 라이선스를 통해 배포됩니다.
   
