@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+
+
+.takanasi .modal .wiki-link-external:before,
+
+.takanasi .popover .wiki-link-external:before,
+
+.wiki-article .wiki-link-external:before {
+
+  padding: 0px 0.15em;
+
+  background: green;
+
+  color: white;
+
+  content: "\f1fe";
+
+  font-family: "Ionicons" !important;
+
+}
+
+
+
+
+
+.wiki-article .wiki-quote {
+
+  padding: 1em calc(2em + 25px) 1em 1em;
+
+  margin: 1em 0;
+
+  background: #eeeeee;
+
+
+
+  display: table;
+
+
+
+  border: 2px dashed #ccc;
+
+  border-left: 5px solid #71BC6D;
+
+  
+  background-position: calc(100% - 10px) 10px;
+
+  background-repeat: no-repeat;
+
+  background-size: 25px;
+
+}
+
+
+
+.wiki-article .wiki-lazy-loading {
+
+  background-color:#888;
+  background-repeat:no-repeat;
+
+  background-position:center;
+
+}
+
+
+
+.wiki-article .wiki-lazy-loading-error {
+
+  background-color:#a00;
+  background-repeat:no-repeat;
+
+  background-position:center;
+
+}
+
+
+
+
+
+.wiki-article .syntax-wrapper {
+
+  padding-right: calc(2em + 20px);
+
+  margin: 1em 0;
+
+
+
+  border: 2px dashed #ccc;
+
+  border-left: 5px solid #609aff;
+
+
+
+  background-color: #f5f5f5;
+
+  
+  background-position: calc(100% - 10px) 7px;
+
+  background-repeat: no-repeat;
+
+  background-size: 30px;
+
+}
+
+
+
+.wiki-article .wiki-link-external:before {
+
+  padding: 0px 0.15em;
+
+  background: green;
+
+  color: white;
+
+  content: "\f1fe";
+
+  font-family: "Ionicons" !important;
+
+}
+
+
+
+.wiki-heading:before {
+
+  float: left;
+
+  font-family: "Ionicons";
+
+  font-weight: normal;
+
+  font-size: 0.6em;
+
+  line-height: 1.8em;
+
+  text-align: center;
+
+  margin: 0 0.5rem 0 0.2rem;
+
+  width: 0.9em;
+
+  color: #666;
+
+  content: "\f123";
+
+}
+
+
+
+.wiki-heading.wiki-heading-content-folded:before {
+
+  content: "\f125";
+
+}
