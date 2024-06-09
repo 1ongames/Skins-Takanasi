@@ -1,0 +1,62 @@
+{
+	"override_views": [
+		"settings"
+	],
+	"static_files": [
+		"css/fonts/ionicons.ttf",
+		"css/fonts/ionicons.woff",
+		"css/lib/bootstrap.min.css",
+		"css/lib/jquery-ui.min.css",
+		"css/lib/nprogress.css",
+		"css/bootstrap-fix.css",
+		"css/dark.css",
+		"css/discuss.css",
+		"css/ionicons.min.css",
+		"css/layout.css",
+		"css/wiki.css",
+		"css/dark.css",
+		"js/lib/bootstrap.min.js",
+		"js/lib/jquery.lazyload.min.js",
+		"js/lib/jquery.pjax.js",
+		"js/lib/jquery-ui.min.js",
+		"js/lib/nprogress.js",
+		"js/lib/super-treadmill.min.js",
+		"js/lib/tether.min.js",
+		"js/namu.js",
+		"js/wiki.js",
+		"js/layout.js"
+	],
+	"auto_js_targets": {
+		"*": [
+			{ "path": "js/lib/bootstrap.min.js" },
+			{ "path": "js/lib/jquery.lazyload.min.js" },
+			{ "path": "js/lib/jquery.pjax.js" },
+			{ "path": "js/lib/jquery-ui.min.js" },
+			{ "path": "js/lib/nprogress.js" },
+			{ "path": "js/lib/super-treadmill.min.js" },
+			{ "path": "js/lib/tether.min.js" },
+			{ "path": "js/namu.js" },
+			{ "path": "js/wiki.js" }
+		]
+	},
+	"auto_css_targets": {
+		"*": [
+			"css/lib/bootstrap.min.css",
+			"css/lib/jquery-ui.min.css",
+			"css/lib/nprogress.css",
+			"css/bootstrap-fix.css",
+			"css/dark.css",
+			"css/discuss.css",
+			"css/ionicons.min.css",
+			"css/layout.css",
+			"css/wiki.css",
+			"css/dark.css"
+		]
+	},
+	"manual_file_targets": {
+	},
+	"body_classes": [
+		"senkawa"
+	],
+	"additional_heads": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">"
+}
