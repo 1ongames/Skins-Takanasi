@@ -1,0 +1,388 @@
+<script type="text/javascript" src="/skins/senkawa/js/layout.js"></script>
+<div class=navbar-wrapper>
+	<nav class="navbar navbar-dark bg-inverse navbar-static-top">
+		<a class="navbar-brand wiki-logo" href="/"></a>
+		<ul class="nav navbar-nav">
+			<li class=nav-item>
+				<a class=nav-link href="/RecentChanges" title="최근 변경">
+					<span class="icon ion-compass"></span>
+					<span class=icon-title>최근 변경</span>
+				</a>
+			</li>
+			<li class=nav-item>
+				<a class=nav-link href="/RecentDiscuss" title="최근 토론">
+					<span class="icon ion-android-textsms"></span>
+					<span class=icon-title>최근 토론</span>
+				</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" title="특수 기능" data-toggle="dropdown" role=button aria-haspopup=true aria-expanded=false>
+					<span class="icon ion-ios-gear"></span>
+					<span class=icon-title>특수 기능</span>
+					<span class=caret></span>
+				</a>
+				<div class="dropdown-menu right">
+					<a class=dropdown-item href="/NeededPages">
+						<span class="icon ion-coffee"></span>
+						<span class=icon-title>작성이 필요한 문서</span>
+					</a>
+					<a class=dropdown-item href="/OrphanedPages">
+						<span class="icon ion-sad-outline"></span>
+						<span class=icon-title>고립된 문서</span>
+					</a>
+					<a class=dropdown-item href="/UncategorizedPages">
+						<span class="icon ion-help-circled"></span>
+						<span class=icon-title>분류가 되지 않은 문서</span>
+					</a>
+					<a class=dropdown-item href="/OldPages">
+						<span class="icon ion-pause"></span>
+						<span class=icon-title>편집된 지 오래된 문서</span>
+					</a>
+					<a class=dropdown-item href="/ShortestPages">
+						<span class="icon ion-heart-broken"></span>
+						<span class=icon-title>내용이 짧은 문서</span>
+					</a>
+					<a class=dropdown-item href="/LongestPages">
+						<span class="icon ion-star"></span>
+						<span class=icon-title>내용이 긴 문서</span>
+					</a>
+					<a class=dropdown-item href="/BlockHistory">
+						<span class="icon ion-eye-disabled"></span>
+						<span class=icon-title>차단 내역</span>
+					</a>
+					<a class=dropdown-item href="/RandomPage">
+						<span class="icon ion-shuffle"></span>
+						<span class=icon-title>RandomPage</span>
+					</a>
+					<a class=dropdown-item href="/Upload">
+						<span class="icon ion-android-upload"></span>
+						<span class=icon-title>파일 올리기</span>
+					</a>
+					<a class=dropdown-item href="/License">
+						<span class="icon ion-pricetag"></span>
+						<span class=icon-title>라이선스</span>
+					</a>
+					{% if perms.has('ipacl') || perms.has('suspend_account') || perms.has('grant') || perms.has('login_history') %}
+					<div class=dropdown-divider></div>
+					{% endif %}
+					{% if perms.has('ipacl') %}
+					<a class=dropdown-item href="/admin/ipacl">
+						<span class="icon ion-wand"></span>
+						<span class=icon-title>[ADMIN] IPACL</span>
+					</a>
+					{% endif %}
+					{% if perms.has('suspend_account') %}
+					<a class=dropdown-item href="/admin/suspend_account">
+						<span class="icon ion-locked"></span>
+						<span class=icon-title>[ADMIN] 사용자 차단</span>
+					</a>
+					{% endif %}
+					{% if perms.has('grant') %}
+					<a class=dropdown-item href="/admin/grant">
+						<span class="icon ion-wand"></span>
+						<span class=icon-title>[ADMIN] 권한</span>
+					</a>
+					{% endif %}
+					{% if perms.has('login_history') %}
+					<a class=dropdown-item href="/admin/login_history">
+						<span class="icon ion-wand"></span>
+						<span class=icon-title>[ADMIN] 로그인 내역</span>
+					</a>
+					{% endif %}
+					{% if perms.has('aclgroup') %}
+					<a class=dropdown-item href="/aclgroup">
+						<span class="icon ion-wand"></span>
+						<span class=icon-title>[ADMIN] ACL Group</span>
+					</a>
+					{% endif %}
+					{% if perms.has('developer') %}
+					<a class=dropdown-item href="/admin/config">
+						<span class="icon ion-wand"></span>
+						<span class=icon-title>[ADMIN] 환경설정</span>
+					</a>
+					{% endif %}
+					{% if perms.has('ipacl') %}
+					<a class=dropdown-item href="/admin/boardipacl">
+						<span class="icon ion-wand"></span>
+						<span class=icon-title>[ADMIN] 차소게 IPACL</span>
+					</a>
+					{% endif %}
+					{% if perms.has('suspend_account') %}
+					<a class=dropdown-item href="/admin/boardsuspendaccount">
+						<span class="icon ion-wand"></span>
+						<span class=icon-title>[ADMIN] 차소게 사용자 차단</span>
+					</a>
+					{% endif %}
+				</div>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav pull-right">
+			<li class="nav-item dropdown user-menu-parent">
+				<a class="nav-link dropdown-toggle user-menu" href="#" title="Member Menu" data-toggle=dropdown aria-haspopup=true aria-expanded=false>
+					{% if member %}
+					<img class=user-img src="{{ member|avatar_url }}">
+					{% else %}
+					<span class="icon ion-person"></span>
+					{% endif %}
+				</a>
+				<div class="dropdown-menu user-dropdown right">
+					<div class="dropdown-item user-info">
+						<div class=user-info>
+							<div>{% if member %}{{ member.username }}{% else %}{{ req_ip }}{% endif %}</div>
+							<div>{% if perms.has('admin') %}Privileged User{% else %}{% if member %}Member{% else %}Please login!{% endif %}{% endif %}</div>
+						</div>
+					</div>
+					<div class=dropdown-divider></div>
+					<a id=settingsLink class=dropdown-item href="/settings">스킨 설정</a>
+					<a id=darkToggleLink class=dropdown-item href="#">어두운 화면으로</a>
+					<div class=dropdown-divider></div>
+					{% if member %}
+					<a class=dropdown-item href="/member/mypage">
+					내 정보
+					</a>
+					<a class=dropdown-item href="/w/{{ member.username | encode_userdoc }}">
+					내 사용자 문서
+					</a>
+					<div class=dropdown-divider></div>
+					{% endif %}
+					<a class=dropdown-item href="/contribution/{% if member %}author{% else %}ip{% endif %}/{% if member %}{{ member.username|url_encode }}{% else %}{{ req_ip }}{% endif %}/document">
+					내 문서 기여 목록
+					</a>
+					<a class=dropdown-item href="/contribution/{% if member %}author{% else %}ip{% endif %}/{% if member %}{{ member.username|url_encode }}{% else %}{{ req_ip }}{% endif %}/discuss">
+					내 토론 기여 목록
+					</a>
+					<div class=dropdown-divider></div>
+					{% if member %}
+					<a class=dropdown-item href="/member/logout?redirect={{ url|url_encode }}">
+					로그아웃
+					</a>
+					{% else %}
+					<a class=dropdown-item href="/member/login?redirect={{ url|url_encode }}">
+					로그인
+					</a>
+					{% endif %}
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline navbar-form search-box-parent">
+			<div class="input-group search-box">
+				<span class="input-group-btn left-search-btns">
+					<a class="btn btn-secondary" href="/random" role=button>
+					<span class="icon ion-shuffle"></span>
+					</a>
+				</span>
+				<input type=text id=searchInput class=form-control placeholder=Search tabindex=1 />
+				<span class="input-group-btn right-search-btns">
+					<button id=searchBtn class="btn btn-secondary" type=button>
+						<span class="icon ion-search"></span>
+					</button>
+					<button id=goBtn class="btn btn-secondary" type=button>
+						<span class="icon ion-arrow-right-c"></span>
+					</button>
+				</span>
+			</div>
+		</form>
+	</nav>
+</div>
+<div class=content-wrapper>
+	<aside class=sidebar>
+		<div class="card recent-card">
+			<h5 class=card-title>최근 변경</h5>
+			<div class=link-table id=recentChangeTable>
+				<a><span class=time>00:00</span>갱신중...</a>
+			</div>
+			<a class=more-link href="/RecentChanges">[더 보기]</a>
+		</div>
+	</aside>
+	<article class="container-fluid wiki-article">
+		{% if config.getString('wiki.sitenotice', null) %}
+		<div class=site-notice>
+			<span class=leaf-info>[공지]</span>
+			{{ config.getString('wiki.sitenotice', '') }}
+		</div>
+		{% endif %}
+		{% if user_document_discuss %}
+		<div class="alert alert-info fade in" id=userDiscussAlert role=alert data-id="{{ member.username }}-{{ user_document_discuss }}">
+			<button type=button class=close data-dismiss=alert aria-label=Close> <span aria-hidden=true>×</span> <span class=sr-only>Close</span> </button>
+			현재 진행중인 <a href="/discuss/{{ member.username|encode_userdoc }}">사용자 토론</a>이 있습니다.
+		</div>
+		{% endif %}
+		<div class=wiki-article-menu>
+			<div class=btn-group role=group>
+				{% if skinInfo.viewName == 'wiki' || skinInfo.viewName == 'notfound' %}
+				<a class="btn btn-secondary" href="/xref/{{ document|encode_doc }}" role=button>역링크</a>
+				<a class="btn btn-secondary{% if discuss_progress %} discuss-bold{% endif %}" href="/discuss/{{ document|encode_doc }}" role=button>토론</a>
+				<a class="btn btn-secondary" href="/edit/{{ document|encode_doc }}" role=button>편집</a>
+				<a class="btn btn-secondary" href="/history/{{ document|encode_doc }}" role=button>역사</a>
+				{% if user %}
+				<a class="btn btn-secondary" href="/contribution/author/{{ document.title|url_encode }}/document" role=button>기여 목록</a>
+				{% endif %}
+				<a class="btn btn-secondary" href="/acl/{{ document|encode_doc }}" role=button>ACL</a>
+				{% endif %}
+				{% if skinInfo.viewName == 'edit' %}
+				<a class="btn btn-secondary" href="/history/{{ document|encode_doc }}" role=button>역사</a>
+				<a class="btn btn-danger" href="/delete/{{ document|encode_doc }}" role=button>삭제</a>
+				<a class="btn btn-secondary" href="/move/{{ document|encode_doc }}" role=button>이동</a>
+				{% endif %}
+				{% if skinInfo.viewName == 'history' %}
+				<a class="btn btn-secondary" href="/edit/{{ document|encode_doc }}" role=button>편집</a>
+				<a class="btn btn-secondary" href="/xref/{{ document|encode_doc }}" role=button>역링크</a>
+				{% endif %}
+				{% if skinInfo.viewName == 'xref' %}
+				<a class="btn btn-secondary" href="/history/{{ document|encode_doc }}" role=button>역사</a>
+				<a class="btn btn-secondary" href="/edit/{{ document|encode_doc }}" role=button>편집</a>
+				{% endif %}
+			</div>
+		</div>
+		<h1 class=title>
+			{% if document %}
+			{% if document.namespace != '문서' || document.forceShowNamespace %}
+			<a href="/w/{{ document|encode_doc }}"><span class=wiki-document-namespace>{{ document.namespace }}:</span><span>{{ document.title }}</span></a>
+			{% else %}
+			<a href="/w/{{ document|encode_doc }}"><span class=wiki-document-title>{{ document.title }}</span></a>
+			{% endif %}
+			{% else %}
+			{{ skinInfo.title }}
+			{% endif %} 
+			
+			{% if skinInfo.viewName == 'edit' %}
+				<small>(편집)</small>
+			{% elseif skinInfo.viewName == 'thread' %}
+				<small>(토론)</small>
+			{% elseif skinInfo.viewName == 'thread_list' %}
+				<small>(토론)</small>
+			{% elseif skinInfo.viewName == 'thread_list_close' %}
+				<small>(닫힌 토론)</small>
+			{% elseif skinInfo.viewName == 'edit_request_list_close' %}
+				<small>(닫힌 편집 요청)</small>
+			{% elseif skinInfo.viewName == 'xref' %}
+				<small>(역링크)</small>
+			{% elseif skinInfo.viewName == 'history' %}
+				<small>(문서 역사)</small>
+			{% elseif skinInfo.viewName == 'move' %}
+				<small>(이동)</small>
+			{% elseif skinInfo.viewName == 'delete' %}
+				<small>(삭제)</small>
+			{% elseif skinInfo.viewName == 'diff' %}
+				<small>(비교)</small>
+			{% elseif skinInfo.viewName == 'acl' %}
+				<small>(ACL)</small>
+			{% elseif skinInfo.viewName == 'edit_request' %}
+				<small>(편집 요청)</small>
+			{% elseif skinInfo.viewName == 'new_edit_request' %}
+				<small>(편집 요청)</small>
+			{% elseif skinInfo.viewName == 'blame' %}
+				<small>(r{{ rev }} Blame)</small>
+			{% elseif skinInfo.viewName == 'raw' %}
+				<small>(r{{ rev }} RAW)</small>
+			{% elseif skinInfo.viewName == 'revert' %}
+				<small>(r{{ rev }}로 되돌리기)</small>
+			{% endif %}
+			{% if skinInfo.viewName == 'wiki' && rev %}
+				<small>(r{{ rev }} 판)</small>
+			{% endif %}
+		</h1>
+		{% if skinInfo.viewName == 'wiki' %}
+		<p class=wiki-edit-date>최근 수정 시각: {{ date | to_date | localdate('Y-m-d H:i:s') }}</p>
+		{% endif %}
+		{% block content %}{% endblock %}
+		{% if config.getString('wiki.copyright_text', '') %}
+		<footer>
+			<p>
+				{{ config.getString('wiki.copyright_text', '') }}
+			</p>
+		</footer>
+		{% endif %}
+	</article>
+</div>
+<div class=footer-wrapper>
+	<footer class=footer>
+		<p>{{ config.getString('wiki.footer_text', '') }}</p>
+	</footer>
+</div>
+<ul class=nav-control>
+	<li>
+		<a href="#top" id=goTopBtn>
+		<span class=ion-arrow-up-b></span>
+		</a>
+	</li>
+	<li>
+		<a href="#bottom" id=goBottomBtn>
+		<span class=ion-arrow-down-b></span>
+		</a>
+	</li>
+</ul>
+<div class="modal fade" id=shortcutHelpModal>
+	<div class=modal-dialog>
+		<div class=modal-content>
+			<div class=modal-header>
+				<button type=button class=close data-dismiss=modal aria-label=Close>
+				<span aria-hidden=true>×</span>
+				<span class=sr-only>Close</span>
+				</button>
+				<h5 class=modal-title>단축키 도움말</h5>
+			</div>
+			<div class=modal-body>
+				<dl class=dl-horizontal>
+					<dt class=col-sm-3><b>F</b>ront Gate</dt>
+					<dd class=col-sm-9>대문</dd>
+					<dt class=col-sm-3>Recent<b>C</b>hanges</dt>
+					<dd class=col-sm-9>최근 변경</dd>
+					<dt class=col-sm-3>Recent<b>D</b>iscuss</dt>
+					<dd class=col-sm-9>최근 토론</dd>
+					<dt class=col-sm-3>R<b>A</b>ndom</dt>
+					<dd class=col-sm-9>랜덤 문서</dd>
+					<dt class=col-sm-3><b>Shift</b> + <b>S</b>earch</dt>
+					<dd class=col-sm-9>검색</dd>
+					<dt class=col-sm-3><b>E</b>dit</dt>
+					<dd class=col-sm-9>문서 편집</dd>
+					<dt class=col-sm-3><b>?</b></dt>
+					<dd class=col-sm-9>단축키 도움말</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id=searchModal data-backdrop=false>
+	<div class="modal-dialog modal-sm">
+		<div class=modal-content>
+			<div class=modal-header>
+				<button type=button class=close data-dismiss=modal aria-label=Close>
+				<span aria-hidden=true>×</span>
+				<span class=sr-only>Close</span>
+				</button>
+				<h6 class=modal-title>검색</h6>
+			</div>
+			<div class=modal-body>
+				<div class="input-group search-box">
+					<input type=text id=searchInput class=form-control placeholder=Search tabindex=1 />
+					<span class=input-group-btn>
+						<button id=searchBtn class="btn btn-secondary" type=button style="margin-left: 0;">
+							<span class="icon ion-search"></span>
+						</button>
+						<button id=goBtn class="btn btn-secondary" type=button>
+							<span class="icon ion-arrow-right-c"></span>
+						</button>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class=modal id=footnoteModal>
+	<div class=modal-dialog role=document>
+		<div class=modal-content>
+			<div class=modal-header>
+				<h5 class=modal-title>각주:</h5>
+			</div>
+			<div class=modal-body></div>
+			<div class=modal-footer>
+				<button type=button class="btn btn-block" data-dismiss=modal>닫기</button>
+			</div>
+		</div>
+	</div>
+</div>
+<ul id=ui-id-1 tabindex=0 class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;"></ul>
+<div role=status aria-live=assertive aria-relevant=additions class=ui-helper-hidden-accessible></div>
+<ul id=ui-id-2 tabindex=0 class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;"></ul>
+<div role=status aria-live=assertive aria-relevant=additions class=ui-helper-hidden-accessible></div>

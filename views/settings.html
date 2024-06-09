@@ -1,0 +1,218 @@
+{% extends 'layout.html' %}
+{% block content %}
+<header class="settings-nav">
+	<ul class="nav nav-pills" role="tablist">
+		<li class="nav-item">
+			<a class="nav-link active" href="#siteLayout" role="tab" data-toggle="tab">사이트</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#wikiLayout" role="tab" data-toggle="tab">위키</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#discussLayout" role="tab" data-toggle="tab">토론</a>
+		</li>
+		<li class="nav-item" style="margin-left: 1.5rem;">
+			<a class="nav-link" href="#experiments" role="tab" data-toggle="tab">실험실</a>
+		</li>
+	</ul>
+</header>
+<section class="tab-content settings-section">
+	<div role="tabpanel" class="tab-pane fade in active" id="siteLayout">
+		<h3>레이아웃</h3>
+		<div class="form-group" id="fixedBody">
+			<label class="control-label">고정폭</label>
+			<select class="form-control setting-item" data-key="fixed_body" data-type="string">
+				<option value="disable">사용하지 않음</option>
+				<option value="1000">1000px</option>
+				<option value="1100">1100px</option>
+				<option value="1200">1200px</option>
+				<option value="1300" selected="selected">1300px</option>
+				<option value="1500">1500px</option>
+				<option value="1600">1600px</option>
+			</select>
+		</div>
+		<div class="form-group" id="hideSidebar">
+			<label class="control-label">사이드바 비활성</label>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" class="setting-item" data-key="hide_sidebar" data-type="boolean"> 사용
+				</label>
+			</div>
+		</div>
+		<div class="form-group" id="leftSidebar">
+			<label class="control-label">사이드바를 좌측에 배치</label>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" class="setting-item" data-key="left_sidebar" data-type="boolean"> 사용
+				</label>
+			</div>
+		</div>
+		<div class="form-group" id="fixedNavbar">
+			<label class="control-label">고정형 내비게이션 바 <small style="color: red;">(실험중!)</small></label>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" class="setting-item" data-key="fixed_navbar" data-type="boolean"> 사용
+				</label>
+			</div>
+		</div>
+		<div class="form-group" id="hideNavControl">
+			<label class="control-label">내비게이션 컨트롤 비활성</label>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" class="setting-item" data-key="hide_navcontrol" data-type="boolean"> 사용
+				</label>
+			</div>
+		</div>
+		<h3>글꼴</h3>
+		<div class="form-group">
+			<label class="control-label">글꼴 <small style="color: red;">(실험중!)</small></label>
+			<select class="form-control setting-item" data-key="forced_font_family" data-type="string">
+				<option value="disabled">사용하지 않음</option>
+				<option value="Apple SD Gothic Neo">Apple SD Gothic Neo</option>
+				<option value="Noto Sans CJK KR">Noto Sans CJK KR</option>
+				<option value="KoPubDotum Medium">KoPubDotum Medium</option>
+				<option value="NanumGothic">NanumGothic</option>
+				<option value="NanumBarunGothic">NanumBarunGothic</option>
+				<option value="Malgun Gothic">Malgun Gothic</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label class="control-label">크기 <small style="color: red;">(실험중!)</small><small> (위키 본문에만 적용됩니다)</small></label>
+			<select class="form-control setting-item" data-key="forced_font_size" data-type="string">
+				<option value="disabled">사용하지 않음</option>
+				<option value="0.8rem">더 작게</option>
+				<option value="0.9rem">작게</option>
+				<option value="1.1rem">크게</option>
+				<option value="1.3rem">더 크게</option>
+				<option value="1.5rem">매우 크게</option>
+			</select>
+		</div>
+		<h3>도움말</h3>
+		<div class="form-group">
+			<label class="control-label">도움말 숨기기 설정 초기화</label>
+			<div>
+				<button type="button" class="btn btn-warning btn-sm" id="removeHelpAlertHide">초기화</button>
+			</div>
+		</div>
+		<h3>설정</h3>
+		<div class="form-group">
+			<label class="control-label">전체 설정 초기화</label>
+			<div>
+				<button type="button" class="btn btn-warning btn-sm" id="removeAllSettings">초기화</button>
+			</div>
+		</div>
+	</div>
+	<div role="tabpanel" class="tab-pane fade" id="wikiLayout">
+		<h3>속성</h3>
+		<div class="form-group">
+			<label class="control-label">취소선</label>
+			<select class="form-control setting-item" data-key="strike" data-type="string">
+				<option value="show" selected="">보이기</option>
+				<option value="remove">취소선 제거</option>
+				<option value="hide">숨기기</option>
+			</select>
+		</div>
+		<h3>추가 기능</h3>
+		<div class="form-group">
+			<label class="control-label">내용과 링크가 다른 링크 펼치기 <small style="color: red;">(실험중!)</small></label>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" class="setting-item" data-key="unfold_wiki_link" data-type="boolean"> 사용
+				</label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">본문 글자 수 보여주기</label>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" class="setting-item" data-key="show_wiki_content_length" data-type="boolean"> 사용
+				</label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">표 워드랩 사용 안 함</label>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" class="setting-item" data-key="nowrap_wiki_table" data-type="boolean"> 사용
+				</label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">각주 표시 형식 <small style="color: red;">(실험중!)</small></label>
+			<select class="form-control setting-item" data-key="footnote_type" data-type="string">
+				<option value="default">기본</option>
+				<option value="popover">팝오버</option>
+				<option value="popup">팝업</option>
+				<option value="unfold">펼침</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Animated gif를 동영상으로 보여주지 않기</label>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" class="setting-item" data-key="disable_replace_video_animated_gif" data-type="boolean"> 사용
+				</label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">이미지<small> (1MB 이상 이미지 숨기기는 내부 이미지만 적용됩니다)</small></label>
+			<select class="form-control setting-item" data-key="wiki_image_hide" data-type="string">
+				<option value="show" selected="">보이기</option>
+				<option value="hide">숨기기</option>
+				<option value="hide_1mb">1MB 이상 이미지 숨기기</option>
+				<option value="lazyload">보이는 이미지만 불러옴</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label class="control-label">문단을 기본으로 접기</label>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" class="setting-item" data-key="hide_heading_content" data-type="boolean"> 사용
+				</label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">접기 문법을 기본으로 펼치기</label>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" class="setting-item" data-key="show_folding" data-type="boolean"> 사용
+				</label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">분류 위치</label>
+			<select class="form-control setting-item" data-key="category_position" data-type="string">
+				<option value="top" selected="">상단</option>
+				<option value="bottom">하단</option>
+			</select>
+		</div>
+	</div>
+	<div role="tabpanel" class="tab-pane fade" id="discussLayout">
+		<h3>속성</h3>
+		<div class="form-group">
+			<label class="control-label">취소선</label>
+			<select class="form-control setting-item" data-key="discuss_strike" data-type="string">
+				<option value="show" selected="">보이기</option>
+				<option value="remove">속성 제거</option>
+				<option value="hide">숨기기</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label class="control-label">굵음</label>
+			<select class="form-control setting-item" data-key="discuss_bold" data-type="string">
+				<option value="show" selected="">보이기</option>
+				<option value="remove">속성 제거</option>
+				<option value="hide">숨기기</option>
+			</select>
+		</div>
+	</div>
+	<div role="tabpanel" class="tab-pane fade" id="experiments">
+		<h3>환영합니다. 실험 참가자 {% if member %}{{ member.username }}{% else %}{{ req_ip|md5(6) }}{% endif %}.</h3>
+		<p>나무위키 실험실은 정식 기능으로 적용하기 전에 테스트가 필요한 기능을 실험하는 곳입니다.</p>
+		<p>예정된 실험은 아래와 같습니다.</p>
+		<ul>
+			<li>나무위키 비서 시스템</li>
+		</ul>
+	</div>
+</section>
+{% endblock %}
