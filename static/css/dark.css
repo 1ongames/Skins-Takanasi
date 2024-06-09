@@ -1,0 +1,438 @@
+/*
+	This skin is namuwiki’s senkawa imitation skin for dark mode.
+
+	Copyright (c) 2024 iongames All rights reserved.
+*/
+
+@charset "UTF-8";
+
+/* -- global start --*/
+body.takanasi.dark {
+	background-color: #000000;
+}
+/* -- global end */
+
+
+/* -- navbar start -- */
+.takanasi.dark .navbar-wrapper {
+	background-color: #373A3C;
+}
+
+.takanasi.dark .navbar {
+	background-color: #373A3C;
+}
+
+.takanasi.dark .navbar-nav .nav-link:hover {
+	background-color: #325A56;
+}
+
+.takanasi.dark .navbar .dropdown-menu {
+	background-color: #373A3C;
+	border: 1px solid #ccc;
+}
+
+.takanasi.dark .navbar .dropdown-menu:after {
+	border-bottom-color: #373A3C;
+}
+
+.takanasi.dark .navbar .dropdown-menu .dropdown-item {
+	color: #ddd;
+}
+
+.takanasi.dark .navbar .dropdown-menu .dropdown-item:hover {
+	background-color: #212121;
+}
+
+.takanasi.dark .navbar .search-box input {
+	background-color: #373A3C;
+	color: #ddd;
+}
+
+.takanasi.dark .navbar .search-box .btn {
+	color: #ddd;
+	background-color: #373A3C;
+}
+
+.takanasi.dark .navbar .user-dropdown .user-info:hover {
+	background-color: #212121;
+}
+/* -- navbar end -- */
+
+
+/* -- article start -- */
+.takanasi.dark .wiki-article {
+	background-color: #000000;
+	color: #ddd;
+}
+
+.takanasi.dark .wiki-article > h1.title > a {
+	color: white;
+}
+
+.takanasi.dark .wiki-article > footer {
+	background-color: #000000;
+	color: #ddd;
+}
+
+.takanasi.dark .wiki-article .wiki-article-menu a {
+	background-color: #343434;
+	color: #ddd;
+}
+
+.takanasi.dark .wiki-article .wiki-article-menu a.discuss-bold {
+	background-color: #325A56;
+}
+
+.takanasi.dark .wiki-article .wiki-article-menu a.discuss-bold:hover {
+	background-color: #438A83;
+}
+
+.takanasi.dark .wiki-article .wiki-article-menu a:hover {
+	background-color: #111111;
+}
+
+.takanasi.dark .wiki-article table {
+	background-color: #000000;
+}
+
+.takanasi.dark .wiki-article table th {
+	background-color: #1d1d1d;
+}
+
+.takanasi.dark .wiki-content table {
+	color: black;
+	background-color: #F5F5F5;
+}
+
+/*	filter: invert(100%);
+	-webkit-filter: invert(100%);
+	-moz-filter: invert(100%);
+	-o-filter: invert(100%);
+	-ms-filter: invert(100%);*/
+}
+
+/*.takanasi.dark .wiki-article table img,
+.takanasi.dark .wiki-article table embed,
+.takanasi.dark .wiki-article table iframe,
+.takanasi.dark .wiki-article table a {
+	filter: invert(100%);
+	-webkit-filter: invert(100%);
+	-moz-filter: invert(100%);
+	-o-filter: invert(100%);
+	-ms-filter: invert(100%);
+}*/
+
+.takanasi.dark .wiki-article table a > img {
+	filter: unset;
+	-webkit-filter: unset;
+	-moz-filter: unset;
+	-o-filter: unset;
+	-ms-filter: unset;
+}
+
+.takanasi.dark .wiki-content table.wiki-closure {
+	background-color: transparent;
+	color: #ddd;
+}
+
+.takanasi.dark .breadcrumb.link-nav {
+	background-color: #212121;
+	border: 1px solid #ccc;
+}
+
+.takanasi.dark .wiki-article .form-group select {
+	background-color: #000000;
+	color: #ddd;
+}
+
+.takanasi.dark .wiki-article .site-notice {
+	color: black;
+}
+
+/* -- article end -- */
+
+
+/* -- footer start -- */
+.takanasi.dark .footer-wrapper {
+	background-color: #000000;
+}
+
+.takanasi.dark .footer {
+    color: #ddd;
+}
+
+.takanasi.dark .mobile-live-bottom-list {
+    color: #ddd;
+}
+.takanasi.dark .mobile-live-bottom-list a {
+    color: #ca8817;
+}
+
+.takanasi.dark .mobile-news-bottom-list {
+    color: #ddd;
+}
+.takanasi.dark .mobile-news-bottom-list a {
+    color: #ca8817;
+}
+
+
+
+
+
+/* -- footer end -- */
+
+
+/* -- wiki content start -- */
+/*.takanasi.dark .wiki-article code {
+	color: #ddd;
+}*/
+
+.takanasi.dark .wiki-article pre {
+	background-color: #333;
+	color: #ddd;
+}
+
+.takanasi.dark .wiki-article .syntax-wrapper {
+	background-color: #444;
+}
+
+.takanasi.dark .wiki-article .syntax-wrapper > pre {
+	background: transparent;
+}
+
+.takanasi.dark .wiki-article .syntax-wrapper > .syntax-lines {
+	background: #476ca1;
+}
+
+.takanasi.dark .wiki-content table caption {
+	color: #ddd;
+}
+
+
+.takanasi.dark .wiki-article table.diff tbody th {
+	background:#112;
+	border:1px solid #443;
+	color:#779;
+}
+
+.takanasi.dark .wiki-article table.diff thead {
+	border-bottom:1px solid #443;
+	background:#101010;
+}
+
+.takanasi.dark .wiki-article table.diff .empty {
+	background-color:#222;
+}
+
+.takanasi.dark .wiki-article table.diff .replace {
+	background-color:#028;
+}
+
+.takanasi.dark .wiki-article table.diff .delete {
+	background-color:#044;
+}
+
+.takanasi.dark .wiki-article table.diff .skip {
+	background-color:#101010;
+	border:1px solid #555;
+	border-right:1px solid #443;
+}
+
+.takanasi.dark .wiki-article table.diff .insert {
+	background-color:#404;
+}
+
+.takanasi.dark .wiki-article table.diff th.author {
+	border-top:1px solid #443;
+	background:#101010
+}
+
+.takanasi.dark .wiki-article ins.diff {
+	background-color: #af00af;
+}
+
+.takanasi.dark .wiki-article del.diff {
+	background-color: #000;
+	color: #666;
+}
+
+.takanasi.dark .wiki-article a:not([class]),
+.takanasi.dark .wiki-article a.wiki-link-anchor,
+.takanasi.dark .sidebar a:not([class]),
+.takanasi.dark .wiki-article a.wiki-link-internal,
+.takanasi.dark .wiki-article a.wiki-fn-content,
+.takanasi.dark .wiki-article a.wiki-self-link,
+.takanasi.dark .sidebar a.wiki-link-internal,
+.takanasi.dark .footer a:not([class]) {
+	color: #ca8817;
+}
+
+.takanasi.dark .wiki-content a.wiki-link-external {
+	color: #5EA4A7;
+}
+
+.takanasi.dark .wiki-content a.wiki-link-external:before {
+	background-color: #5EA4A7;
+}
+
+.takanasia.dark .wiki-article a.not-exist {
+	color: #C30000;
+}
+
+.takanasi.dark .wiki-article .res .r-head {
+	background-color: #2a2a2a;
+}
+
+.takanasi.dark .wiki-article .res .r-head.first-author {
+	background-color: #405640;
+}
+
+.takanasi.dark .wiki-article .res .r-body {
+	background-color: #0b0b0b;
+}
+
+.takanasi.dark .wiki-article .res .wiki-quote {
+	background-color: #010101;
+}
+
+.takanasi.dark .wiki-article .wiki-quote {
+	background-color: #444;
+}
+
+.takanasi.dark .wiki-content .wiki-unfold-fn {
+	background-color: #444;
+	color: #ddd;
+}
+/* -- wiki content end -- */
+
+
+/* -- discuss start -- */
+.takanasi.dark .wiki-article .more-box {
+	background-color: #325A56;
+	color: #ddd;
+}
+
+.takanasi.dark .wiki-article .more-box:hover {
+	background-color: #438A83;
+}
+/* -- discuss end -- */
+
+
+/* -- sidebar start -- */
+.takanasi.dark .sidebar .card {
+	background-color: black;
+	color: #ddd;
+}
+
+.takanasi.dark .sidebar .card .card-title,
+.takanasi.dark .recent-card .link-table a:hover,
+.takanasi.dark .recent-card a.more-link {
+	background-color: black;
+}
+
+.takanasi.dark .recent-card a.more-link {
+	color: white;
+}
+
+.takanasi.dark .recent-card .link-table a span {
+	color: #ddd;
+}
+/* -- sidebar end -- */
+
+
+/* -- settings start -- */
+.takanasi.dark .settings-nav .nav-pills .nav-link {
+	color: #ddd;
+}
+/* -- settings end -- */
+
+
+/* -- mypage start -- */
+.takanasi.dark .mypage-nav .nav-pills .nav-link {
+	color: #ddd;
+}
+/* -- mypage end -- */
+
+
+/* -- nav-control start -- */
+.takanasi.dark .nav-control {
+	background-color: #373A3C;
+}
+/* -- nav-controls end -- */
+
+
+/* -- modal start -- */
+.takanasi.dark .modal .modal-content {
+	background-color: #444;
+	color: #ddd;
+}
+
+.takanasi.dark .modal .modal-header {
+	border-bottom: 1px solid #aaa;
+}
+
+.takanasi.dark .modal .modal-footer {
+	border-top: 1px solid #aaa;
+}
+
+.takanasi.dark .modal#footnoteModal .modal-footer .btn {
+	background-color: #555;
+}
+
+.takanasi.dark .modal .close {
+	color: white;
+	opacity: 0.6;
+}
+/* -- modal end -- */
+
+
+/* -- bootstrap fix start -- */
+.takanasi.dark input,
+.takanasi.dark textarea {
+	background-color: #000000;
+	color: #ddd;
+}
+
+.takanasi.dark .btn-secondary {
+	color: #ddd;
+	background-color: #333;
+}
+
+.takanasi.dark .btn-secondary:hover {
+	background-color: #555;
+}
+
+.takanasi.dark .table-hover tbody tr:hover {
+	background-color: #333;
+}
+/* -- bootstrap fix end -- */
+
+
+/* -- nprogress fix start -- */
+.takanasi.dark #nprogress .bar {
+	background: white;
+}
+/* -- nprogress fix end -- */
+
+
+/* -- jquery ui fix start -- */
+.takanasi.dark ul.ui-widget-content.ui-menu.ui-autocomplete {
+	border: 1px solid #ccc;
+	background: #222;
+	color: #ddd;
+}
+
+.takanasi.dark ul.ui-widget-content.ui-menu.ui-autocomplete li.ui-menu-item {
+	background: #555;
+}
+
+.takanasi.dark ul.ui-widget-content.ui-menu.ui-autocomplete li.ui-menu-item.ui-state-focus {
+	color: #ccc;
+	background: #777;
+
+	border: 1px solid #ccc;
+}
+.takanasi.dark .wiki-document-namespace {
+	color: #c7c7c7;
+}
+/* -- jquery ui fix end -- */

@@ -1,0 +1,1434 @@
+/*
+	namu-senkawa layout stylesheet
+
+	Copyright (c) 2015-2016, PPPP@theseed.io. All rights reserved.
+*/
+
+@charset "UTF-8";
+
+/* -- global start --*/
+html {
+	-ms-overflow-style: scrollbar;
+}
+
+html, body, th, td, input, select, textarea, button,
+div, p, h1, h2, h3, h4, h5, h6,
+a, span, li {
+	font-family: "Open Sans", arial, 'Apple SD Gothic Neo', 'Noto Sans CJK KR', '본고딕', 'KoPubDotum Medium', '나눔바른고딕', '나눔고딕', 'NanumGothic', '맑은고딕', 'Malgun Gothic', sans-serif;
+}
+
+body, th, td,
+div, p, li {
+	font-size: 0.9rem;
+}
+
+input, select, textarea,
+button, .takanasi .btn {
+	font-size: 0.9rem !important;
+}
+
+body.takanasi {
+	background-color: #EFEFEF;
+}
+
+:focus {
+	outline: none;
+}
+
+::-moz-focus-inner {
+	border: 0;
+}
+
+.takanasi .table-wrap {
+	display: block;
+	max-width: 100%;
+	overflow-x: auto;
+	margin: 10px 0;
+}
+
+.takanasi .tab-content.bordered {
+	border: 1px solid #ddd;
+	border-top: none;
+}
+/* -- global end */
+
+
+/* -- navbar start -- */
+.takanasi .navbar-wrapper {
+	background-color: #abdecf;
+	z-index: 91001;
+}
+
+.takanasi .navbar {
+	padding: 0 1rem;
+	font-size: 1rem;
+	background-color: #abdecf;
+}
+
+.takanasi .navbar .navbar-brand {
+	margin-right: 0.7rem;
+}
+
+@media screen and (max-width: 420px) {
+	.senkawa .navbar .navbar-brand {
+		margin-right: 0.3rem;
+	}
+}
+
+.takanasi .navbar .wiki-logo {
+	height: 2.6rem;
+	width: 6.6rem;
+
+	background: transparent url("/skins/takanasi/static/img/wiki_logo.extension") no-repeat scroll center center / auto 35px;
+
+	padding: 0;
+}
+
+.takanasi .navbar-nav .nav-item {
+	padding: 0;
+}
+
+.takanasi .navbar-nav .nav-item + .nav-item {
+	margin-left: 0.2rem;
+}
+
+.takanasi .navbar-nav .icon:before {
+	min-width: 1em;
+	text-align: center;
+}
+
+.takanasi .navbar-nav .icon-title {
+	margin-left: 0.3rem;
+}
+
+.takanasi .navbar-nav .nav-link {
+	color: white;
+	font-size: 1rem;
+	padding: 0.6rem 0.7rem 0.5rem 0.7rem;
+}
+
+.takanasi .navbar-nav .nav-link:hover {
+	background-color: #ccebe2;
+	color: white;
+}
+
+/* small tablet */
+@media screen and (max-width: 42em) {
+	.takanasi .navbar-nav .icon {
+		margin-right: 0;
+	}
+
+	.takanasi .navbar-nav .nav-item + .nav-item {
+		margin-left: 0;
+	}
+
+	.takanasi .navbar-nav .nav-link {
+		padding: 0.6rem 0.9rem 0.5rem 0.9rem;
+	}
+
+	.takanasi .navbar-nav .nav-link > .icon-title {
+		display: none;
+	}
+}
+
+/* phone */
+@media screen and (max-width: 420px) {
+	.takanasi .navbar {
+		padding: 0 0.3rem;
+	}
+
+	.takanasi .navbar-nav .nav-link {
+		padding: 0.6rem 0.5rem 0.5rem 0.5rem;
+	}
+
+	.takanasi .navbar .search-box-parent {
+		margin: 0 0.7rem;
+	}
+}
+
+.takanasi .navbar .search-box {
+	float: right;
+}
+
+.takanasi .navbar .search-box input {
+	width: 220px;
+	height: 2.62rem;
+
+	border-radius: 0;
+}
+
+.takanasi .navbar .search-box .btn {
+	height: 2.62rem;
+
+	color: black;
+	font-size: 1.2rem !important;
+
+	padding: 0.25rem 0.5rem;
+
+	border-radius: 0;
+	border-right: 1px solid #CCC;
+
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC; /* 0.0625rem */
+}
+
+.takanasi .navbar .search-box .right-search-btns .btn:first-of-type {
+	margin-left: 0;
+	border-left: 0;
+}
+
+@media screen and (max-width: 42em) {
+	.takanasi .navbar .search-box .left-search-btns .btn:first-of-type {
+		margin-left: 0;
+		border-left: 0;
+	}
+}
+
+/* tablet */
+@media screen and (max-width: 1020px) {
+	.takanasi .navbar .search-box {
+		float: left;
+		width: calc(100% + 2rem);
+		margin-left: -1rem;
+		display: table !important;
+		height: 2rem !important;
+	}
+
+	.takanasi .navbar .search-box input {
+		width: 100%;
+		height: 2.2rem;
+	}
+
+	.takanasi .navbar .search-box .input-group-btn {
+		width: 1%;
+	}
+
+	.takanasi .navbar .search-box .btn {
+		height: 2.2rem;
+		padding: 0.15rem 0.5rem 0.35rem 0.5rem;
+	}
+
+	.takanasi .navbar .search-box .btn:last-of-type {
+		border-right: 0;
+	}
+}
+
+.takanasi .navbar .user-menu-parent,
+.takanasi .navbar .user-menu-parent > a {
+	width: 42px;
+	height: 42px;
+}
+
+.takanasi .navbar .user-menu-parent {
+	margin-left: 0.5rem;
+}
+
+.takanasi .navbar .user-menu {
+	display: inline-block;
+
+	padding: 0;
+}
+
+/*.takanasi .navbar .user-menu:hover {
+	background-color: transparent;
+}*/
+
+.takanasi .navbar .user-menu .icon {
+	display: inline-block;
+
+	font-size: 1.4rem;
+	text-align: center;
+
+	width: 2.4rem;
+
+	padding-top: 0.3rem;
+	padding-left: 0.3rem;
+
+	margin-right: 0px;
+	margin-bottom: 0.1rem;
+}
+
+.takanasi .navbar .user-menu:after {
+	margin-left: 0;
+
+	border-top: 0;
+	border-right: 0;
+	border-left: 0;
+}
+
+.takanasi .navbar .user-menu .user-img {
+	width: 42px;
+	height: 42px;
+}
+
+.takanasi .navbar .dropdown-menu {
+	margin-top: 1rem;
+
+	font-size: 0.9rem;
+
+	border-radius: 0;
+
+	left: -0.2rem;
+}
+
+.takanasi .navbar .dropdown-menu.right {
+	left: auto;
+	right: -6px;
+}
+
+.takanasi .navbar .dropdown-menu.user-dropdown.right {
+	right: 0;
+}
+
+
+.takanasi .navbar .dropdown-menu:after,
+.takanasi .navbar .dropdown-menu:before {
+	bottom: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.takanasi .navbar .dropdown-menu:after {
+	border-bottom-color: white;
+	border-width: 10px;
+
+	left: 1.25rem;
+	right: auto;
+}
+
+.takanasi .navbar .dropdown-menu:before {
+	border-bottom-color: #CCC;
+	border-width: 11px; /* 0.6875rem */
+
+	left: 1.2rem;
+	right: auto;
+}
+
+.takanasi .navbar .dropdown-menu.right:after {
+	left: auto;
+	right: 10px;
+}
+
+.takanasi .navbar .dropdown-menu.right:before {
+	left: auto;
+	right: 9px;
+}
+
+.takanasi .navbar .user-dropdown .user-info:hover {
+	background-color: white;
+}
+
+.takanasi .navbar .user-dropdown .user-info .user-info {
+	margin-right: -0.5rem;
+	line-height: 20px;
+	text-align: right;
+}
+
+.takanasi .navbar .user-dropdown .user-info .user-info div {
+	font-size: 0.8rem;
+}
+
+.takanasi .navbar .user-dropdown .user-info .user-info div:first-of-type {
+	font-size: 1rem !important;
+	font-weight: bold;
+}
+/* -- navbar end -- */
+
+
+/* -- footer start -- */
+.takanasi .footer-wrapper {
+	background-color: white;
+	border-top: 1px solid #ccc;
+}
+
+.takanasi .footer {
+	margin: 0 auto;
+	padding: 1rem 1rem;
+
+	text-align: center;
+}
+
+.takanasi .footer p {
+	margin-bottom: 0.5rem;
+}
+
+.senkawa .footer p:last-of-type {
+	margin-bottom: 0;
+}
+
+.senkawa .footer .sep:before {
+	content: '|';
+	margin: 0 0.5rem;
+	color: #aaa;
+}
+
+@media screen and (max-width: 1020px) {
+	.takanasi .footer {
+		padding-bottom: 3rem;
+	}
+}
+/* -- footer end -- */
+
+
+/* -- sidebar start --*/
+.takanasi .sidebar {
+	float: right;
+	width: 17rem;
+
+	margin: 1rem 1rem 1rem 0;
+}
+
+@media screen and (max-width: 1020px) {
+	.takanasi .sidebar {
+		display: none;
+	}
+}
+
+.takanasi .sidebar.has-site-notice {
+	/*margin-top: 3rem;*/
+}
+
+.takanasi .sidebar .card {
+	background-color: white;
+	border-color: #ccc;
+	border-radius: 0;
+}
+
+.takanasi .sidebar .card {
+	padding: 0;
+}
+
+.takanasi .sidebar .card .card-title {
+	margin: 1.25rem;
+}
+
+.takanasi .sidebar .card .link-table a {
+	display: block;
+	padding: 0.3rem 3.3rem 0.3rem 0.5rem;
+	border-top: 1px solid #ccc;
+
+	word-wrap: break-word;
+	overflow: auto;
+}
+
+.takanasi .sidebar .card .link-table a:last-of-type {
+	border-bottom: 1px solid #ccc;
+}
+
+.takanasi .sidebar .card .link-table a span.time {
+	float: right;
+	margin-right: -2.8rem;
+	color: black;
+}
+
+.takanasi .sidebar .card a.more-link {
+	display: block;
+	text-align: right;
+	padding: 0.5rem 0.7rem;
+}
+
+.takanasi .sidebar .card a:hover {
+	background-color: #FCFCFC;
+	text-decoration: none;
+}
+
+.takanasi .sidebar .card.live-list-card .link-table a {
+	padding-right: 0.3rem;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: normal;
+	white-space: nowrap;
+}
+/* -- sidebar end --*/
+
+
+/* -- article start -- */
+.takanasi .wiki-article {
+	margin: 0 19rem 0 0;
+	padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+	min-height: 35rem;
+
+	background-color: white;
+
+	border-right: 1px solid #ccc;
+	/*border-bottom: 1px solid #ccc;*/
+
+	word-break: break-all;
+}
+
+@media screen and (max-width: 1020px) {
+	.takanasi .wiki-article {
+		padding: 0.7rem;
+		margin: 0;
+		border: 0 !important; /* for additional classes... */
+	}
+}
+
+.takanasi .wiki-article .site-notice {
+	background-color: #F0EF75;
+	padding: 0.3rem 1rem;
+	/*margin: -1.5rem -20.5rem 1.5rem -1.5rem;*/
+	margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+	border-bottom: 1px solid #ccc;
+}
+
+@media screen and (max-width: 1020px) {
+	.takanasi .wiki-article .site-notice {
+		margin: -0.7rem -0.7rem 0.7rem -0.7rem;
+		padding: 0.2rem 0.7rem;
+	}
+}
+
+.takanasi .live-topbar-area {
+	padding: 0.3rem 0.7rem;
+
+	background-color: #bae4d7;
+	color: white;
+	word-break: break-all;
+
+	border-bottom: 1px solid rgb(187, 187, 187);
+	overflow: hidden;
+	height: 2em;
+}
+
+@media screen and (min-width: 1021px) {
+	.takanasi .live-topbar-area {
+		display: none;
+	}
+}
+
+.takanasi .live-topbar-area a {
+	color: white;
+}
+
+.takanasi .live-topbar-area a:hover {
+	text-decoration: none;
+}
+
+.takanasi .leaf-info {
+	font-family: "Monospace";
+	color: white;
+	font-size: 0.8em;
+	border-radius: 0.3rem;
+	background: #008275;
+	padding: 0 0.3rem;
+	margin-top: 0.2rem;
+	margin-right: 0.2rem;
+}
+
+.takanasi .wiki-article .alert {
+	margin-bottom: 0.7rem;
+}
+
+.takanasi .wiki-article .alert.last {
+	margin-bottom: 1.4rem;
+}
+
+.takanasi .wiki-article > .title {
+	margin: 0 0 2rem 0;
+
+	font-weight: bold;
+}
+
+.takanasi .wiki-article > h1.title {
+	font-size: 2.2rem;
+}
+
+.takanasi .wiki-article > h1.title > a {
+	color: black;
+}
+
+.takanasi .wiki-article > .title + .wiki-edit-date {
+	font-size: 0.85rem;
+
+	margin-top: -1.8rem;
+	margin-bottom: 1rem;
+
+	text-align: right;
+}
+
+@media screen and (max-width: 1020px) {
+	.takanasi .wiki-article > .title + .wiki-edit-date {
+		margin-top: -1.4rem;
+	}
+}
+
+.takanasi .wiki-article .wiki-article-menu {
+	float: right;
+}
+
+.takanasi .wiki-article .wiki-article-menu a {
+	font-size: 0.9rem;
+	padding: 0.3rem 0.8rem;
+}
+
+.takanasi .wiki-article .wiki-article-menu a.discuss-bold {
+	background-color: #BBEABB;
+}
+
+.takanasi .wiki-article .wiki-article-menu a.btn-star span {
+	color: #ff6200;
+	margin-right: .1em;
+}
+
+@media screen and (max-width: 1020px) {
+	.takanasi .wiki-article .wiki-article-menu ~ h1.title {
+		margin-top: 1rem;
+	}
+
+	.takanasi .wiki-article .wiki-article-menu {
+		margin: -0.7rem -0.7rem 0 -0.7rem;
+		border-bottom: 0.0625rem solid #ccc;
+		text-align: right;
+		float: none;
+	}
+
+	.takanasi .wiki-article .wiki-article-menu .btn {
+		border-radius: 0;
+
+		border-top: 0;
+		border-bottom: 0;
+	}
+
+	.takanasi .wiki-article .alert + .wiki-article-menu {
+		border-top: 1px solid #ccc;
+	}
+
+	.takanasi .btn-group > .btn:last-child:not(:first-child) {
+		border-right: 0;
+	}
+}
+
+.takanasi .wiki-article ul:not([class]) {
+	padding-left: 2rem;
+}
+
+.takanasi .wiki-content {
+	min-height: 22rem;
+}
+
+.takanasi .wiki-article tr.no-line + tr td {
+	border-top: 0;
+	padding-top: 0;
+	padding-left: 1.5rem;
+}
+
+.takanasi .wiki-article > footer {
+	border-top: 1px solid gray;
+	margin: 1.5rem 0 0 0;
+	padding: 0.7rem 0 0 0;
+	text-align: right;
+	background-color: white;
+}
+
+.takanasi .wiki-article > footer p:last-of-type {
+	margin-bottom: 0;
+}
+/* -- article end -- */
+
+
+/* -- recent changes start -- */
+.takanasi .wiki-article .recent-option {
+	margin-bottom: 1.4rem;
+}
+
+.takanasi .wiki-article .recent-option .form-group label {
+	margin-right: 0.7rem;
+	line-height: 1.8rem;
+}
+
+.takanasi .wiki-article .recent-option .form-group select {
+	min-width: 10rem;
+	padding: 0.1rem 0.3rem;
+}
+
+.takanasi .wiki-article .recent-option .btns {
+	margin: 1rem 0 0 0;
+	float: none;
+}
+
+@media screen and (min-width: 420px) {
+	.takanasi .wiki-article .recent-option .btns {
+		margin: 0;
+		float: right;
+	}
+}
+/* -- recent changes end -- */
+
+
+/* -- wiki start -- */
+.takanasi .wiki-content .wiki-unfold-fn {
+	background-color: #efefef;
+	color: #555555;
+
+	border: 1px solid #cecece;
+
+	font-size: 0.8rem;
+	margin-left: 0.1rem;
+	margin-right: 0.2rem;
+}
+
+.takanasi .wiki-content .wiki-unfold-fn .wiki-fn-content {
+	font-size: 1em;
+	vertical-align: baseline;
+}
+/* -- wiki end -- */
+
+
+/* -- edit start -- */
+.takanasi .wiki-article #previewFrame {
+	display: block;
+    width: 100%;
+    height: 30rem;
+    border: none;
+}
+
+/*.takanasi .wiki-article .wiki-article-menu + .wiki-article-menu {
+	margin-right: 11rem;
+}*/
+
+.takanasi .wiki-article #editForm #textInput {
+	width: 100%;
+	height: 30rem;
+	border: none;
+}
+/* -- edit end -- */
+
+
+/* -- form start -- */
+.takanasi #uploadForm,
+.takanasi #lostForm {
+	overflow: hidden;
+}
+/* -- form end -- */
+
+
+/* -- upload start -- */
+.takanasi #uploadForm #fakeFileInput[readonly] {
+	background-color: white;
+	cursor: default;
+}
+
+.takanasi #uploadForm #textInput {
+	width: 100%;
+	height: 30rem;
+
+	margin: 0.3rem 0 1rem 0;
+}
+
+.takanasi #uploadForm #uploadBtn {
+	width: 7rem;
+}
+/* -- upload end -- */
+
+
+/* -- login, signup start -- */
+.takanasi .login-form,
+.takanasi .signup-form {
+	width: 100%;
+}
+
+.takanasi .login-form input[type="text"],
+.takanasi .login-form input[type="password"],
+.takanasi .signup-form input[type="text"],
+.takanasi .signup-form input[type="email"],
+.takanasi .signup-form input[type="password"] {
+	width: 100%;
+}
+
+@media screen and (min-width: 34rem) {
+	.takanasi .login-form {
+		width: 28rem;
+		margin: 0 auto;
+	}
+
+	.takanasi .signup-form {
+		width: 34rem;
+		margin: 0 auto;
+	}
+
+	.takanasi .login-form label,
+	.takanasi .signup-form label {
+		display: block;
+	}
+
+	.takanasi .login-form input[type="text"],
+	.takanasi .login-form input[type="password"],
+	.takanasi .signup-form input[type="text"],
+	.takanasi .signup-form input[type="email"],
+	.takanasi .signup-form input[type="password"] {
+		display: inline-block;
+		margin-left: 0.7rem;
+		width: calc(100% - 0.7rem);
+	}
+}
+
+.takanasi form .error-desc {
+	margin-left: 0.7em;
+	color: red;
+}
+
+.takanasi form .btns,
+.takanasi .settings-section .btns {
+	text-align: right;
+	margin-top: 2rem;
+}
+
+.takanasi .login-form button[type="submit"],
+.takanasi .signup-form button[type="submit"] {
+	width: 5rem;
+}
+
+.takanasi .small-doc {
+	border: 1px solid #ccc;
+	overflow: scroll;
+	background-color: white;
+	color: black;
+}
+
+.takanasi .small-doc .small-title {
+	font-size: 1.4rem;
+}
+
+.takanasi .small-doc ul {
+	list-style: none;
+}
+/* -- login end -- */
+
+
+/* -- settings start --*/
+.takanasi .settings-nav {
+	height: 2.6rem;
+
+	margin-bottom: 1.2rem;
+	padding: 0.3rem;
+
+	border: 1px solid #ccc;
+}
+
+.takanasi .settings-nav .nav-pills .nav-link {
+	border-radius: 0;
+	padding: 0.3rem 0.5rem;
+}
+
+.takanasi .settings-nav .nav-pills .nav-item + .nav-item {
+	margin-left: 0.5rem;
+}
+
+.takanasi .settings-section {
+	overflow: hidden;
+}
+
+.takanasi .settings-section h3 {
+	margin-top: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.takanasi .settings-section h3:first-of-type {
+	margin-top: 0;
+}
+
+.takanasi .settings-section .form-group .checkbox {
+	padding-left: 1rem;
+}
+
+.takanasi .settings-section .form-group select {
+	margin-left: 1rem;
+	max-width: 16rem;
+}
+
+.takanasi .settings-section .form-group input[type="text"] {
+	margin-left: 1rem;
+	max-width: 22rem;
+}
+
+@media screen and (max-width: 768px) {
+	.takanasi .settings-section .form-group input[type="text"] {
+		width: calc(100% - 2rem);
+	}
+}
+
+.takanasi .settings-section .form-group button {
+	margin-left: 1rem;
+}
+
+.takanasi .settings-section small {
+	font-size: 80% !important;
+}
+/* -- setting end -- */
+
+
+/* -- mypage start -- */
+.takanasi .mypage-nav {
+	float: left;
+
+	width: 13rem;
+
+	margin-bottom: 1.2rem;
+	padding: 0.5rem;
+
+	border: 1px solid #ccc;
+}
+
+.takanasi .mypage-nav .nav-pills .nav-link {
+	border-radius: 0;
+}
+
+.takanasi .mypage-section {
+	margin-left: 14rem;
+}
+
+@media screen and (max-width: 42em) {
+	.takanasi .mypage-nav {
+		float: none;
+		width: auto;
+	}
+
+	.takanasi .mypage-section {
+		margin-left: 0;
+	}
+}
+/* -- mypage end -- */
+
+
+/* -- license start -- */
+.takanasi .license-table {
+	table-layout: fixed;
+}
+
+.takanasi .license-table tr td:first-of-type {
+	text-align: right;
+}
+/* -- license end -- */
+
+
+/* -- search start -- */
+.takanasi .alert.search-help {
+	min-height: 3.2rem;
+	margin-bottom: 0.8rem;
+	overflow: hidden;
+}
+
+.takanasi .alert.search-help .pull-left {
+	line-height: 2.1rem;
+}
+
+.takanasi .search-summary {
+	border-bottom: 1px solid #e5e5e5;
+	padding-bottom: 0.9rem;
+}
+
+.takanasi .search-section .search-item {
+	border-bottom: 1px solid #e5e5e5;
+	padding-bottom: 1.1rem;
+}
+
+.takanasi .search-section .arrow-circle {
+	background-color: #009888;
+	color: white;
+
+	text-align: center;
+
+	border-radius: 16px;
+
+	padding: 0 8px 1px 9px;
+	margin-right: 4px;
+}
+
+.takanasi .search-section h4 {
+	margin-top: 1.3rem;
+	margin-bottom: 0.9rem;
+}
+
+.takanasi .search-section h4 a {
+	color: black;
+}
+
+.takanasi .search-section h4 a:hover {
+	text-decoration: none;
+}
+
+.takanasi .search-section .search-highlight {
+	background-color: #48AD97;
+	color: white;
+	padding: 0 0.2em;
+	border-radius: 4px;
+}
+
+.takanasi .search-section .pagination > li > a {
+    padding: .4rem .75rem;
+}
+/* -- search end -- */
+
+
+/* -- character start -- */
+.takanasi .wiki-content.character {
+	background-position: right top !important;
+	background-repeat: no-repeat !important;
+}
+
+.takanasi .wiki-content.munya-notfound {
+	background-image: url(/skins/senkawa/img/character/munya/notfound.png);
+	background-size: auto 340px;
+}
+
+@media screen and (max-width: 360px), screen and (max-height: 360px) {
+	.takanasi .wiki-content.munya-notfound {
+		background-size: auto 200px;
+	}
+}
+
+.takanasi .wiki-content.sephi-notfound0 {
+	background-size: auto 340px;
+}
+
+@media screen and (max-width: 360px), screen and (max-height: 360px) {
+	.takanasi .wiki-content.sephi-notfound0 {
+		background-size: auto 200px;
+	}
+}
+
+.takanasi .wiki-content.sephi-notfound1 {
+	background-size: auto 340px;
+}
+
+@media screen and (max-width: 360px), screen and (max-height: 360px) {
+	.takanasi .wiki-content.sephi-notfound1 {
+		background-size: auto 200px;
+	}
+}
+/* -- character end -- */
+
+
+/* -- nav-control start -- */
+.takanasi .nav-control {
+	position: fixed;
+
+	margin: 0;
+	padding: 0;
+
+	right: 0;
+	bottom: 0;
+
+	list-style-type: none;
+
+	border-bottom: none;
+	border-right: none;
+
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-top-left-radius: 5px;
+
+	background-color: #008275;
+	opacity: 0.8;
+
+	z-index: 90005;
+}
+
+.takanasi .nav-control li {
+	float: left;
+}
+
+.takanasi .nav-control li a {
+	color: white;
+	font-size: 1.8rem;
+	line-height: 42px;
+	text-align: center;
+
+	width: 40px;
+	height: 40px;
+
+	display: inline-block;
+
+	border-left: 2px dashed #ccc;
+}
+
+.takanasi .nav-control li:first-of-type a {
+	border-left: none;
+}
+
+@media screen and (max-width: 1020px) {
+	.takanasi .nav-control li a {
+		width: 45px;
+		height: 45px;
+
+		font-size: 2.2rem;
+		line-height: 48px;
+	}
+}
+/* -- nav-controls end -- */
+
+
+/* -- modal start -- */
+.takanasi.modal-open.modal-open-fix {
+	overflow: visible !important;
+	padding-right: 0 !important;
+}
+
+.takanasi.modal-open.modal-open-fix2 {
+	padding-right: 0 !important;
+}
+
+.takanasi.modal-open.modal-open-fix3 {
+	padding-right: 17px !important;
+}
+
+.takanasi .modal#shortcutHelpModal .modal-body dl {
+	margin: 0rem;
+}
+
+.takanasi .modal#shortcutHelpModal .modal-body dt {
+	text-align: right;
+}
+
+.takanasi .modal#shortcutHelpModal .modal-body b {
+	color: #BD4147;
+	background-color: #F7F7F9;
+}
+
+.takanasi .modal#searchModal {
+	left: auto;
+	right: 1.5rem !important;
+}
+
+.takanasi .modal#searchModal .modal-content {
+	border: 0;
+	border-radius: 0;
+}
+
+.takanasi .modal#searchModal .close {
+	top: 4px;
+	position: relative;
+}
+
+.takanasi .modal#searchModal .modal-header {
+	padding: 0.3rem 0.7rem;
+
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-bottom: 0;
+}
+
+.takanasi .modal#searchModal .modal-body {
+	padding: 1px;
+}
+
+.takanasi .modal#footnoteModal .modal-header {
+	padding: 10px 15px;
+}
+
+.takanasi .modal#footnoteModal .modal-footer {
+	padding: 0;
+}
+
+.takanasi .modal#footnoteModal .modal-footer .btn {
+	border-radius: 0.3rem;
+
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+
+	padding: 7px;
+}
+
+.takanasi .modal#footnoteModal .modal-dialog {
+	position: relative;
+
+	width: 600px;
+	max-width: 600px;
+	margin: 60px auto;
+
+	left: 50%;
+	margin-left: -300px;
+}
+
+@media screen and (max-width: 630px) {
+	.takanasi .modal#footnoteModal .modal-dialog {
+		width: calc(100% - 20px);
+		margin: 60px 10px;
+
+		left: auto;
+	}
+}
+/* -- modal end -- */
+
+
+/* -- additional class start -- */
+.takanasi.fixed-size .wiki-article {
+	border-left: 1px solid #ccc;
+}
+
+@media screen and (max-width: 1020px) {
+	.takanasi.fixed-size .wiki-article {
+		border-left: none !important;
+	}
+}
+
+.takanasi.fixed-size.hide-sidebar .wiki-article {
+	margin-right: 0;
+}
+
+/*.takanasi.fixed-size .wiki-article {
+	margin-right: 0;
+}*/
+
+.takanasi.fixed-size .content-wrapper {
+	margin: 0 auto;
+}
+
+.takanasi .fixed-size.fixed-800 .content-wrapper,
+.takanasi .fixed-size.fixed-800 .navbar,
+.takanasi .fixed-size.fixed-800 .footer {
+	max-width: 800px;
+}
+
+.takanasi.fixed-size.fixed-1000 .content-wrapper,
+.takanasi.fixed-size.fixed-1000 .navbar,
+.takanasi.fixed-size.fixed-1000 .footer {
+	max-width: 1000px;
+}
+
+.takanasi.fixed-size.fixed-1100 .content-wrapper,
+.takanasi.fixed-size.fixed-1100 .navbar,
+.takanasi.fixed-size.fixed-1100 .footer {
+	max-width: 1100px;
+}
+
+.takanasi.fixed-size.fixed-1200 .content-wrapper,
+.takanasi.fixed-size.fixed-1200 .navbar,
+.takanasi.fixed-size.fixed-1200 .footer {
+	max-width: 1200px;
+}
+
+.takanasi.fixed-size.fixed-1300 .content-wrapper,
+.takanasi.fixed-size.fixed-1300 .navbar,
+.takanasi.fixed-size.fixed-1300 .footer {
+	max-width: 1300px;
+}
+
+.takanasi.fixed-size.fixed-1500 .content-wrapper,
+.takanasi.fixed-size.fixed-1500 .navbar,
+.takanasi.fixed-size.fixed-1500 .footer {
+	max-width: 1500px;
+}
+
+.takanasi.fixed-size.fixed-1600 .content-wrapper,
+.takanasi.fixed-size.fixed-1600 .navbar,
+.takanasi.fixed-size.fixed-1600 .footer {
+	max-width: 1600px;
+}
+
+.takanasi.fixed-size .navbar {
+	margin: 0 auto;
+}
+
+.takanasi.fixed-size:not(.left-sidebar) .wiki-article .site-notice {
+	/*border-right: 1px solid #ccc;*/
+}
+
+/*.takanasi.fixed-size .sidebar {
+	position: absolute;
+	float: none;
+}
+
+.takanasi.fixed-size.fixed-1000:not(.left-sidebar) .sidebar {
+	margin-left: calc(1000px + 1rem);
+}
+
+.takanasi.fixed-size.fixed-1200:not(.left-sidebar) .sidebar {
+	margin-left: calc(1200px + 1rem);
+}
+
+.takanasi.fixed-size.fixed-1300:not(.left-sidebar) .sidebar {
+	margin-left: calc(1300px + 1rem);
+}*/
+
+/* - fixed size end - */
+
+.takanasi.fixed-navbar .wiki-article .wiki-fn-content .target,
+.takanasi.fixed-navbar .wiki-article .footnote-list .target {
+	position: absolute;
+	margin-top: -40px;
+}
+
+.takanasi.fixed-navbar .wiki-article {
+	margin-top: 2.53rem;
+}
+
+@media screen and (max-width: 1020px) {
+	.takanasi.fixed-navbar .wiki-article {
+		margin-top: 4.83rem;
+	}
+}
+
+.takanasi.fixed-navbar .navbar-wrapper {
+	width: 100%;
+	position: fixed;
+
+	height: 2.6rem;
+	margin-top: -40px;
+}
+
+@media screen and (max-width: 1020px) {
+	.takanasi.fixed-navbar .navbar-wrapper {
+		height: 2.5rem;
+	}
+}
+
+.takanasi.fixed-navbar .navbar {
+	z-index: 90004;
+}
+
+.takanasi.fixed-navbar.modal-open .modal .modal-dialog {
+	margin-top: 60px !important;
+}
+
+@media screen and (max-width: 1020px) {
+	.takanasi.fixed-navbar.modal-open .modal .modal-dialog {
+		margin-top: 90px !important;
+	}
+}
+
+/* - fixed navbar end - */
+
+.takanasi.hide-sidebar .sidebar {
+	display: none;
+}
+
+.takanasi.hide-sidebar:not(.fixed-size) .wiki-article {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.takanasi.hide-sidebar .wiki-article .site-notice {
+	margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+}
+
+@media screen and (max-width: 1020px) {
+	.takanasi.hide-sidebar .wiki-article .site-notice {
+		margin: -0.7rem -0.7rem 0.7rem -0.7rem;
+	}
+}
+
+/* - hide sidebar end - */
+
+.takanasi.nowrap-wiki-table .wiki-article .wiki-table {
+	white-space: nowrap;
+}
+
+/* - nowrap wiki table end - */
+
+.takanasi.left-sidebar .wiki-article {
+	margin-left: 19rem;
+	margin-right: 0;
+	border-left: 1px solid #ccc;
+}
+
+@media screen and (max-width: 1020px) {
+	.takanasi.left-sidebar .wiki-article {
+		margin-left: 0;
+	}
+}
+
+.takanasi.left-sidebar .sidebar {
+	float: left;
+	margin: 1rem 0 1rem 1rem;
+}
+
+.takanasi.left-sidebar .wiki-article .site-notice {
+	/* margin: -1.5rem -1.5rem 1.5rem -20.5rem; */
+	margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+	/*border-left: 1px solid #ccc;*/
+}
+
+.takanasi.left-sidebar .sidebar.has-site-notice {
+	/*margin-top: 3rem;*/
+}
+
+/* -- additional class end -- */
+
+
+/* -- media print start --*/
+@media print {
+	.takanasi .navbar,
+	.takanasi .tab_bar,
+	.takanasi .wiki-article .wiki-article-menu,
+	.takanasi .nav-control,
+	.takanasi .sidebar {
+		display: none !important;
+	}
+
+	.takanasi .wiki-article {
+		margin: 0;
+		border: 0 !important;
+	}
+}
+/* -- media print end --*/
+
+
+/* -- nprogress fix start -- */
+.takanasi #nprogress .bar {
+	background: #BBEABB;
+	position: fixed;
+}
+
+.takanasi #nprogress .peg {
+	box-shadow: 0 0 10px white, 0 0 5px white;
+}
+/* -- nprogress fix end -- */
+
+
+/* -- utils start -- */
+.takanasi .line-break {
+	display: block;
+
+	border: none;
+	border-bottom: 1px solid #ccc;
+}
+/* -- utils end -- */
+
+
+/* -- css fix start -- */
+.takanasi table.diff tbody th {
+	white-space: nowrap;
+}
+/* -- css fix end -- */
+
+.takanasi .modal del,
+.takanasi .popover del {
+  color: gray;
+}
+
+.takanasi .modal .not-exists,
+.takanasi .popover .not-exists {
+  color: red;
+}
+
+.takanasi .modal .not-exists,
+.takanasi .popover .not-exists {
+  font-weight: bold;
+}
+
+.takanasi .modal .wiki-link-external,
+.takanasi .popover .wiki-link-external {
+  color: #090;
+}
+
+.takanasi .modal img,
+.takanasi .popover img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+
+/* -- google ad start -- */
+#div-gpt-ad-1449622106273-0 {
+	text-align: center;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+/* -- google ad end -- */
+

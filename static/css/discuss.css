@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+.takanasi .wiki-article .discuss-notice {
+	background: #f5f5f5;
+	margin: -15px -15px 0 -15px;
+	padding: 9px 7px 7px 10px;
+	border-bottom: 1px solid gray;
+}
+
+.takanasi .wiki-article .res-wrapper {
+	padding-bottom: 20px;
+	margin: 0; /*margin: 0 -16px 0 -15px;*/
+	/*padding-left: 30px*/
+}
+
+
+.takanasi .wiki-article .res-wrapper.res-loading[data-visible="true"] {
+	opacity:0.25;
+	animation-duration: 500ms;
+	animation-name: res-loading-ani;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes res-loading-ani {
+    0% {opacity:0.25;}
+    25% {opacity:0.37;}
+    50% {opacity:0.52;}
+    75% {opacity:0.81;}
+    100% {opacity:1;}
+}
+
+.takanasi .wiki-article .res-wrapper.res-loading .r-body {
+	padding: 50px;
+}
+
+.takanasi .wiki-article .res-wrapper:last-of-type {
+	padding-bottom: 40px;
+
+	border-bottom: 2px dashed gray;
+}
+
+.takanasi .wiki-article .res {
+	min-width: 400px;
+    max-width: 100%;
+	display: inline-block;
+	word-wrap: break-word;
+}
+
+.takanasi .wiki-article .topic-discuss .res-wrapper {
+	padding-left: 25px
+}
+
+.takanasi .wiki-article .topic-discuss .res {
+	width: 75%;
+}
+
+@media screen and (max-width: 700px) {
+	.takanasi .wiki-article .res-wrapper {
+		padding-left: 0;
+	}
+	
+	.takanasi .wiki-article .res {
+		min-width: 100%;
+		width: 100%;
+		display: block;
+	}
+
+	.takanasi .wiki-article .topic-discuss .res {
+		display: block;
+	}
+
+	.takanasi .wiki-article .res .r-head {
+		border-left: none;
+		border-right: none;
+	}
+
+	.takanasi .wiki-article .res .r-body {
+		border-left: none;
+		border-right: none;
+	}
+}
+
+.takanasi .wiki-article .res .hidden-content {
+	display: none;
+}
+
+.takanasi .wiki-article .res .r-head {
+	/*font-size: 15px;*/
+
+	margin: 0;
+	padding: 7px 7px 7px 10px;
+
+	background: #d5d5d5;
+
+	border: 1px solid gray;
+	border-bottom: none;
+}
+
+.takanasi .wiki-article .res .r-head.first-author {
+	background: #B0D3AD;
+}
+
+.takanasi .wiki-article .res .r-head .num {
+	/*font-size: 20px;*/
+}
+
+.takanasi .wiki-article .res .r-head .flag-icon {
+	margin-left: 5px;
+}
+
+.takanasi .wiki-article .res .r-body {
+	padding: 13px;
+
+	border: 1px solid gray;
+
+	/*border-radius: 5px;*/
+	background: #f4f4f4;
+
+	word-wrap: break-word;
+
+	max-height: 500px;
+	overflow-y: auto;
+}
+
+.takanasi .wiki-article .res .r-body img {
+	max-width: 100%;
+}
+
+.takanasi .wiki-article .res .r-body p:last-of-type {
+	margin-bottom: 0;
+}
+
+.senkawa .wiki-article .res.res-type-status .r-body {
+	background: #FFCC66;
+}
+
+.takanasi .wiki-article .res .r-hidden-body {
+	background: #6b6b6b;
+	color: white;
+}
+
+.takanasi .wiki-article .res .wiki-quote {
+	/*border: 1px dashed gray;*/
+	background-color: #fefefe;
+}
+
+.takanasi .wiki-article .new-thread-form input[name="topic"] {
+	margin: 5px 0 10px 0;
+}
+
+.takanasi .wiki-article .r-hidden-body .text-line-break {
+	overflow: hidden;
+	margin: 15px -10px -10px -10px;
+}
+
+.takanasi .wiki-article .r-hidden-body .text-line-break .text {
+	color: white;
+}
+
+.takanasi .wiki-article .r-hidden-body .text-line-break .line {
+	border-bottom: 1px solid white;
+}
+
+.takanasi .wiki-article .res .admin-menu {
+	margin: 0px;
+}
+
+.takanasi .wiki-article .res .admin-menu .d_btn {
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+
+.takanasi .wiki-article .more-box {
+	display: block;
+
+	background: #f4f4f4;
+	border: 1px solid gray;
+
+	width: 80px;
+
+	text-align: center;
+	font-weight: bold;
+	
+	padding: 5px;
+	margin-bottom: 25px;
+	margin-left: 40px;
+}
+
+.takanasi .wiki-article .more-box:hover {
+	background: #BAC6F2;
+}
