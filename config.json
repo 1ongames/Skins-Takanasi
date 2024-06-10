@@ -22,7 +22,7 @@
 		"js/lib/nprogress.js",
 		"js/lib/super-treadmill.min.js",
 		"js/lib/tether.min.js",
-		"js/beta.js",
+		"js/namu.js",
 		"js/wiki.js",
 		"js/layout.js"
 	],
@@ -35,7 +35,7 @@
 			{ "path": "js/lib/nprogress.js" },
 			{ "path": "js/lib/super-treadmill.min.js" },
 			{ "path": "js/lib/tether.min.js" },
-			{ "path": "js/beta.js" },
+			{ "path": "js/namu.js" },
 			{ "path": "js/wiki.js" }
 		]
 	},
